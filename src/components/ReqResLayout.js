@@ -30,7 +30,7 @@ const ReqResLayout = ({apiData,apiType, buttonText, bgColor,setdata,clearData, i
   };
 
   const handleReuqestClicked = async () => {
-    const requestObject = isImage? {...apiJson[apiType], responseType: 'blob'} : {...apiJson[apiType]}
+    const requestObject = {...apiJson[apiType]};
     console.log("Request Body",requestObject)
     requestObject.url = injectParamsToUrl(requestObject.url, {statusCode: statusRef?.current?.value});
     setIsLoading(true)
@@ -67,7 +67,7 @@ const ReqResLayout = ({apiData,apiType, buttonText, bgColor,setdata,clearData, i
             </p>
         {isUserInput && <input className='w-24 border border-red-500 active:border-red-500 py-2 px-4' ref={statusRef} placeholder='status-code' />}
       </div>
-      <div className='flex justify-between items-center'> 
+      <div className='flex justify-between items-center mt-1'> 
           <RequestButton 
             isLoading={isLoading} 
             text={buttonText} 

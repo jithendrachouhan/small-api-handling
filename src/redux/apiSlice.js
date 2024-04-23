@@ -10,7 +10,9 @@ const apiSlice = createSlice({
         deleteApiData: null,
         getStatusCodeData: null,
         getImageJpeg: null,
-        getHTML: null
+        getHTML: null,
+        getGzip: null,
+        getBrotli: null
 
     },
     reducers: {
@@ -62,6 +64,18 @@ const apiSlice = createSlice({
         clearHTMLData: (state) => {
             state.getHTML = null
         },
+        setGzipData: (state,action) => {
+            state.getGzip = action.payload
+        },
+        clearGzipData: (state) => {
+            state.getGzip = null
+        },
+        setBrotLiData: (state,action) => {
+            state.getBrotli = action.payload
+        },
+        clearBrotLiData: (state) => {
+            state.getBrotli = null
+        },
     }
 })
 
@@ -82,7 +96,11 @@ export const {
     setGetImageJpegData,
     clearGetImageJpegData,
     setHTMLData,
-    clearHTMLData
+    clearHTMLData,
+    setGzipData,
+    clearGzipData,
+    setBrotLiData,
+    clearBrotLiData
 } = apiSlice.actions;
 
 export default apiSlice.reducer

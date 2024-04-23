@@ -76,6 +76,22 @@ const Body = () => {
         apiData={apiData.getHTML}
         isHTML={true}
       />
+      <ReqResLayout 
+        apiType="getGzip" 
+        bgColor={'bg-red-300'}
+        buttonText="Get Gzip"
+        setdata={apiActions.setGzipData}
+        clearData={apiActions.clearGzipData}
+        apiData={apiData.getGzip}
+      />
+      <ReqResLayout 
+        apiType="getBrotli" 
+        bgColor={'bg-red-300'}
+        buttonText="Get Brotli"
+        setdata={apiActions.setBrotLiData}
+        clearData={apiActions.clearBrotLiData}
+        apiData={apiData.getBrotli}
+      />
     </>
   )
 }

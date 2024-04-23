@@ -61,9 +61,28 @@ const apiJson = {
       'Accept': '*/*',
       'Content-Type': 'application/json',
     }, 
+    responseType: 'blob'
   },
   getHTML: {
     url: '/kitchen-sink/response/html',
+    method: 'GET',
+    data: {},
+    headers: {
+      'Accept': '*/*',
+      'Content-Type': 'application/json',
+    }, 
+  },
+  getGzip: {
+    url: '/kitchen-sink/response/gzip',
+    method: 'GET',
+    data: {},
+    headers: {
+      'Accept': '*/*',
+      'Content-Type': 'application/json',
+    }, 
+  },
+  getBrotli: {
+    url: '/kitchen-sink/response/brotli',
     method: 'GET',
     data: {},
     headers: {
